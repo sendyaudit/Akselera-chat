@@ -59,7 +59,6 @@ Ini berlaku juga jika data diakses langsung lewat REST API Supabase atau client 
 
 ## Yang Belum Selesai / Bisa Dikembangkan Lebih Lanjut
 
-- Logo masih placeholder teks (`/public/logo-black.svg`, `/public/logo-white.svg`) — perlu diganti dengan file asli dari folder "File Asset".
 - Penanda pesan belum dibaca (unread indicator) belum diimplementasikan.
 - Status online belum diimplementasikan (bisa memakai Supabase Presence).
 - Konfirmasi email saat registrasi mandiri saat ini mengikuti pengaturan default Supabase Auth (bisa dinonaktifkan di dashboard untuk mempercepat testing).
