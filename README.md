@@ -23,8 +23,8 @@ Fondasi fitur chat untuk CRM internal Akselera.Tech (integrasi WhatsApp menyusul
 2. Buat project di [supabase.com](https://supabase.com), lalu jalankan seluruh isi file `supabase-schema.sql` di **SQL Editor** Supabase (bisa dijalankan sekaligus atau dipecah per bagian jika editor membatasi panjang query).
 3. Salin `.env.local.example` menjadi `.env.local`, isi dengan kredensial dari **Project Settings → API** di dashboard Supabase:
    ```
-   NEXT_PUBLIC_SUPABASE_URL=...
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+   NEXT_PUBLIC_SUPABASE_URL=https://hbivpyynfcigdwvanrdd.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhiaXZweXluZmNpZ2R3dmFucmRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAzOTM5NDMsImV4cCI6MjEwNTk2OTk0M30.ubkxvZ9xZSyLG8HwF1qEAyRZ851PHKbUIBkLtzOofmk
    ```
 4. Jalankan:
    ```
