@@ -34,18 +34,19 @@ Fondasi fitur chat untuk CRM internal Akselera.Tech (integrasi WhatsApp menyusul
 
 ## Struktur Tabel
 
-| Tabel | Keterangan |
-|---|---|
-| `profiles` | Data publik tiap akun (id, email, nama). Terisi otomatis lewat trigger saat user mendaftar. |
-| `conversations` | Daftar percakapan (hanya menyimpan id & waktu dibuat). |
-| `conversation_participants` | Menghubungkan user ke percakapan (2 baris per percakapan 1-on-1). |
-| `messages` | Isi pesan, terhubung ke `conversation_id` dan `sender_id`. |
+| Tabel                       | Keterangan                                                                                  |
+| --------------------------- | ------------------------------------------------------------------------------------------- |
+| `profiles`                  | Data publik tiap akun (id, email, nama). Terisi otomatis lewat trigger saat user mendaftar. |
+| `conversations`             | Daftar percakapan (hanya menyimpan id & waktu dibuat).                                      |
+| `conversation_participants` | Menghubungkan user ke percakapan (2 baris per percakapan 1-on-1).                           |
+| `messages`                  | Isi pesan, terhubung ke `conversation_id` dan `sender_id`.                                  |
 
 Fungsi `create_direct_conversation(other_user_id)` (security definer) adalah satu-satunya jalur resmi untuk membuat percakapan baru — mencegah user membuat baris `conversation_participants` untuk percakapan orang lain secara langsung.
 
 ## Keamanan Akses Data
 
 Seluruh tabel mengaktifkan RLS:
+
 - `messages` dan `conversations` hanya bisa dibaca oleh user yang tercatat sebagai partisipan di `conversation_participants`.
 - Insert pesan hanya diizinkan atas nama diri sendiri (`sender_id = auth.uid()`) ke percakapan yang diikuti.
 - `conversation_participants` tidak punya policy insert untuk role `authenticated` — pembuatan baris hanya lewat function `create_direct_conversation`.
